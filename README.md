@@ -1,4 +1,4 @@
-FlizpathPlaying
+FizpathPlaying
 ===============
 
 Playspace for FizPath team
