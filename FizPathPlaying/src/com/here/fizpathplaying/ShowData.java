@@ -1,39 +1,34 @@
 package com.here.fizpathplaying;
 
-import android.content.Context;
-import android.hardware.SensorManager;
+import android.app.Activity;
+import android.app.ActionBar;
+import android.app.Fragment;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.os.Build;
 
-public class MainActivity extends ActionBarActivity {
-	
-	public Run loop;
+public class ShowData extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.activity_show_data);
 
 		if (savedInstanceState == null) {
-			getSupportFragmentManager().beginTransaction().add(R.id.container, new PlaceholderFragment()).commit();
+			getFragmentManager().beginTransaction()
+					.add(R.id.container, new PlaceholderFragment()).commit();
 		}
-		
-		loop = new Run();
-		loop.running = true;
-		loop.run();
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
+		getMenuInflater().inflate(R.menu.show_data, menu);
 		return true;
 	}
 
@@ -60,8 +55,8 @@ public class MainActivity extends ActionBarActivity {
 		@Override
 		public View onCreateView(LayoutInflater inflater, ViewGroup container,
 				Bundle savedInstanceState) {
-			View rootView = inflater.inflate(R.layout.mainscreen, container,
-					false);
+			View rootView = inflater.inflate(R.layout.fragment_show_data,
+					container, false);
 			return rootView;
 		}
 	}
